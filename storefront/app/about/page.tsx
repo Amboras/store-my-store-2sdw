@@ -8,7 +8,7 @@ export default function AboutPage() {
       <div className="border-b">
         <div className="container-custom py-section-sm text-center">
           <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-2">Our Story</p>
-          <h1 className="text-h1 font-heading font-semibold">About Us</h1>
+          <h1 className="text-h1 font-heading font-semibold">About Azaan</h1>
         </div>
       </div>
 
