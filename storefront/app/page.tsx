@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { ArrowRight, Truck, Shield, RotateCcw } from 'lucide-react'
+import { ArrowRight, Truck, Shield, RotateCcw, Leaf, Sparkles, Heart } from 'lucide-react'
 import CollectionSection from '@/components/marketing/collection-section'
 import { useCollections } from '@/hooks/use-collections'
 import { trackMetaEvent } from '@/lib/meta-pixel'
@@ -105,31 +105,78 @@ export default function HomePage() {
       {/* Editorial / Brand Story Section */}
       <section className="py-section bg-muted/30">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="aspect-[4/5] bg-muted rounded-sm overflow-hidden relative">
-              <Image
-                src={LIFESTYLE_PLACEHOLDER}
-                alt="Lifestyle - Our Philosophy"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Image with floating badge */}
+            <div className="relative lg:col-span-5">
+              <div className="aspect-[4/5] bg-muted rounded-sm overflow-hidden relative">
+                <Image
+                  src={LIFESTYLE_PLACEHOLDER}
+                  alt="Lifestyle - Our Philosophy"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="hidden sm:flex absolute -bottom-6 -right-6 lg:-right-10 bg-background shadow-lg px-6 py-5 items-center gap-4 rounded-sm border">
+                <p className="text-4xl font-heading font-semibold leading-none">2024</p>
+                <div className="h-10 w-px bg-border" />
+                <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground leading-tight">
+                  Founded with<br />a purpose
+                </p>
+              </div>
             </div>
-            <div className="space-y-6 lg:max-w-md">
-              <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Our Philosophy</p>
-              <h2 className="text-h2 font-heading font-semibold">
-                Crafted With Intention
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Every product in our collection is chosen for its quality, design, and the story behind it.
-                We believe in fewer, better things — pieces that last and bring joy to everyday moments.
+
+            {/* Content */}
+            <div className="lg:col-span-7 lg:pl-8">
+              <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                — Our Philosophy
               </p>
+              <h2 className="text-h2 font-heading font-semibold text-balance mb-6">
+                Crafted With Intention,<br className="hidden sm:block" />
+                Designed to Last.
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg max-w-xl mb-10">
+                We believe in fewer, better things — pieces that earn their place in your life
+                and bring quiet joy to everyday moments.
+              </p>
+
+              {/* Three Pillars */}
+              <div className="grid sm:grid-cols-3 gap-8 pt-8 border-t">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-foreground/5">
+                    <Sparkles className="h-4 w-4" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-sm font-semibold uppercase tracking-wide">Quality</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Premium materials sourced from artisans who care about craft.
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-foreground/5">
+                    <Leaf className="h-4 w-4" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-sm font-semibold uppercase tracking-wide">Sustainability</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Ethically produced and packaged to minimize our footprint.
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-foreground/5">
+                    <Heart className="h-4 w-4" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-sm font-semibold uppercase tracking-wide">Timeless</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Designs that transcend trends and only get better with time.
+                  </p>
+                </div>
+              </div>
+
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide link-underline pb-0.5"
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide link-underline pb-0.5 mt-10"
                 prefetch={true}
               >
-                Learn More
+                Discover Our Story
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
