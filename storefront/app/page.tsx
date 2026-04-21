@@ -48,7 +48,7 @@ export default function HomePage() {
                 className="btn-brand-primary inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold uppercase tracking-wide transition-opacity"
                 prefetch={true}
               >
-                Shop Now
+                Shop Better
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
